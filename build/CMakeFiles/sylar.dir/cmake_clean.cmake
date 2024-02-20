@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sylar.dir/sylar/src/log.cpp.o"
-  "CMakeFiles/sylar.dir/sylar/src/log.cpp.o.d"
   "CMakeFiles/sylar.dir/sylar/sylar.cpp.o"
-  "CMakeFiles/sylar.dir/sylar/sylar.cpp.o.d"
   "sylar"
   "sylar.pdb"
 )

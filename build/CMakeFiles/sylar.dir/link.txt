@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/sylar.dir/sylar/sylar.cpp.o CMakeFiles/sylar.dir/sylar/src/log.cpp.o -o sylar 
+/usr/bin/g++  -g   CMakeFiles/sylar.dir/sylar/sylar.cpp.o CMakeFiles/sylar.dir/sylar/src/log.cpp.o  -o sylar 

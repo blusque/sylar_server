@@ -29,7 +29,8 @@ class LogLevel {
 class LogEvent {
  public:
   using ptr = std::shared_ptr<LogEvent>;
-  LogEvent(const std::string& message);
+  LogEvent(const std::string& message, const char* file = __FILE__,
+           int32_t line = __LINE__);
 
   [[nodiscard]] const char* getFile() const { return m_file; }
   [[nodiscard]] int32_t getLine() const { return m_line; }
@@ -57,25 +58,17 @@ class LogFormatter {
   using ptr = std::shared_ptr<LogFormatter>;
   LogFormatter(const std::string& pattern);
 
-  std::string format(LogLevel::Level level, LogEvent::ptr event);
+  std::string format(LogLevel::Level level, LogEvent::ptr event,
+                     const std::string& name);
 
- private:
+ public:
   class Item {
    public:
     using ptr = std::shared_ptr<Item>;
     virtual ~Item() {}
     virtual void format(std::stringstream& ss, LogLevel::Level level,
-                        LogEvent::ptr event) = 0;
+                        LogEvent::ptr event, const std::string& name) = 0;
   };
-
-  friend class FileItem;
-  friend class LineItem;
-  friend class ElapseItem;
-  friend class ThreadItem;
-  friend class FiberItem;
-  friend class TimeItem;
-  friend class ContentItem;
-  friend class LogLevelItem;
 
  private:
   void init();
@@ -89,7 +82,8 @@ class LogAppender {
   using ptr = std::shared_ptr<LogAppender>;
   virtual ~LogAppender() {}
 
-  virtual void log(LogLevel::Level level, LogEvent::ptr event) = 0;
+  virtual void log(LogLevel::Level level, LogEvent::ptr event,
+                   const std::string& loggerName) = 0;
 
   [[nodiscard]] LogFormatter::ptr getLogFormatter() const {
     return m_formatter;
@@ -122,11 +116,6 @@ class Logger {
   [[nodiscard]] LogLevel::Level getLogLevel() const { return m_level; }
   void setLogLevel(LogLevel::Level level) { m_level = level; }
 
-  [[nodiscard]] static Logger& getLogger() {
-    static auto logger = Logger();
-    return logger;
-  }
-
  private:
   std::string m_name;                               // 日志名称
   LogLevel::Level m_level{LogLevel::Level::DEBUG};  // 输出最低日志级别
@@ -138,7 +127,8 @@ class StdoutLogAppender : public LogAppender {
   using ptr = std::shared_ptr<StdoutLogAppender>;
   ~StdoutLogAppender() override {}
 
-  void log(LogLevel::Level level, LogEvent::ptr event) override;
+  void log(LogLevel::Level level, LogEvent::ptr event,
+           const std::string& loggerName) override;
 
  private:
 };
@@ -149,7 +139,8 @@ class FileLogAppender : public LogAppender {
   FileLogAppender(const std::string& filename);
   ~FileLogAppender() override {}
 
-  void log(LogLevel::Level level, LogEvent::ptr event) override;
+  void log(LogLevel::Level level, LogEvent::ptr event,
+           const std::string& loggerName) override;
 
   bool reopen();
 
@@ -162,8 +153,8 @@ class FileItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~FileItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::string(event->getFile());
   }
 };
@@ -172,8 +163,8 @@ class LineItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~LineItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::to_string(event->getLine());
   }
 };
@@ -182,8 +173,8 @@ class ElapseItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~ElapseItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::to_string(event->getElapse());
   }
 };
@@ -192,8 +183,8 @@ class ThreadItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~ThreadItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::to_string(event->getThreadID());
   }
 };
@@ -202,8 +193,8 @@ class FiberItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~FiberItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::to_string(event->getFiberID());
   }
 };
@@ -212,8 +203,8 @@ class TimeItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~TimeItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     auto time = event->getTime();
     auto timestamp = std::string(std::ctime(&time));
     timestamp.pop_back();
@@ -225,8 +216,8 @@ class ContentItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~ContentItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << std::string(event->getContent());
   }
 };
@@ -235,9 +226,29 @@ class LogLevelItem : public LogFormatter::Item {
  public:
   using ptr = std::shared_ptr<Item>;
   ~LogLevelItem() override {}
-  void format(std::stringstream& ss, LogLevel::Level level,
-              LogEvent::ptr event) override {
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
     ss << LogLevel::toString(level);
+  }
+};
+
+class LoggerNameItem : public LogFormatter::Item {
+ public:
+  using ptr = std::shared_ptr<Item>;
+  ~LoggerNameItem() override {}
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
+    ss << name;
+  }
+};
+
+class PatternErrorItem : public LogFormatter::Item {
+ public:
+  using ptr = std::shared_ptr<Item>;
+  ~PatternErrorItem() override {}
+  void format(std::stringstream& ss, LogLevel::Level level, LogEvent::ptr event,
+              const std::string& name) override {
+    ss << "<Pattern-Error>";
   }
 };
 

@@ -1,6 +1,6 @@
-/home/ubuntu/sylar_server/build/CMakeFiles/sylar.dir
-/home/ubuntu/sylar_server/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/sylar_server/build/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir
-/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/rebuild_cache.dir
+/home/blusque/sylar_server/build/CMakeFiles/rebuild_cache.dir
+/home/blusque/sylar_server/build/CMakeFiles/edit_cache.dir
+/home/blusque/sylar_server/build/CMakeFiles/sylar.dir
+/home/blusque/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/edit_cache.dir
+/home/blusque/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/rebuild_cache.dir
+/home/blusque/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir

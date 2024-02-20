@@ -1,56 +1,47 @@
 [
 {
-  "directory": "/home/ubuntu/sylar_server/build",
-  "command": "/usr/bin/g++  -I/home/ubuntu/sylar_server/sylar/src -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -o CMakeFiles/sylar.dir/sylar/sylar.cpp.o -c /home/ubuntu/sylar_server/sylar/sylar.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/sylar.cpp",
-  "output": "CMakeFiles/sylar.dir/sylar/sylar.cpp.o"
+  "directory": "/home/blusque/sylar_server/build",
+  "command": "/usr/bin/g++   -I/home/blusque/sylar_server/sylar/src -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -o CMakeFiles/sylar.dir/sylar/sylar.cpp.o -c /home/blusque/sylar_server/sylar/sylar.cpp",
+  "file": "/home/blusque/sylar_server/sylar/sylar.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/build",
-  "command": "/usr/bin/g++  -I/home/ubuntu/sylar_server/sylar/src -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -o CMakeFiles/sylar.dir/sylar/src/log.cpp.o -c /home/ubuntu/sylar_server/sylar/src/log.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/src/log.cpp",
-  "output": "CMakeFiles/sylar.dir/sylar/src/log.cpp.o"
+  "directory": "/home/blusque/sylar_server/build",
+  "command": "/usr/bin/g++   -I/home/blusque/sylar_server/sylar/src -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -o CMakeFiles/sylar.dir/sylar/src/log.cpp.o -c /home/blusque/sylar_server/sylar/src/log.cpp",
+  "file": "/home/blusque/sylar_server/sylar/src/log.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/spdlog.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/spdlog.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/spdlog.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/spdlog.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/stdout_sinks.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/stdout_sinks.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/stdout_sinks.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/stdout_sinks.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/color_sinks.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/color_sinks.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/color_sinks.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/color_sinks.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/file_sinks.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/file_sinks.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/file_sinks.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/file_sinks.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/async.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/async.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/async.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/async.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/async.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/cfg.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/cfg.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/cfg.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/cfg.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/cfg.cpp"
 },
 {
-  "directory": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
-  "command": "/usr/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/ubuntu/sylar_server/sylar/vendor/spdlog/include -g -std=c++11 -o CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /home/ubuntu/sylar_server/sylar/vendor/spdlog/src/bundled_fmtlib_format.cpp",
-  "file": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/src/bundled_fmtlib_format.cpp",
-  "output": "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
+  "directory": "/home/blusque/sylar_server/sylar/vendor/spdlog/build",
+  "command": "/usr/bin/g++  -DSPDLOG_COMPILED_LIB -I/home/blusque/sylar_server/sylar/vendor/spdlog/include  -g   -std=c++11 -o CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /home/blusque/sylar_server/sylar/vendor/spdlog/src/bundled_fmtlib_format.cpp",
+  "file": "/home/blusque/sylar_server/sylar/vendor/spdlog/src/bundled_fmtlib_format.cpp"
 }
 ]
