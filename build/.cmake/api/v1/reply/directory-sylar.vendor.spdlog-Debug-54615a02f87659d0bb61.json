@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/sylar_server/sylar/vendor/spdlog/build",
+		"source" : "sylar/vendor/spdlog"
+	}
+}

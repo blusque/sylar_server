@@ -1,0 +1,3 @@
+[submodule "sylar/vendor/spdlog"]
+	path = sylar/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
